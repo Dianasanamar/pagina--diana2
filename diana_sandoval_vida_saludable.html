@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diana Sandoval - Estilos de Vida Saludables</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f4f8;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      background-color: #0055cc;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #003366;
+    }
+
+    .menu-btn {
+      display: none;
+      background-color: #0055cc;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    main img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .info-btn {
+      background-color: #0077ff;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .info-btn:hover {
+      background-color: #005fcc;
+      transform: scale(1.05);
+    }
+
+    .info-text {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Diana Sandoval</h1>
+    <p>“Cuidar de ti es el primer paso hacia una vida plena.”</p>
+    <p>“La salud no lo es todo, pero sin ella, todo lo demás es nada.”</p>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+  </header>
+
+  <nav id="navMenu">
+    <a href="#">Inicio</a>
+    <a href="#">Sobre mí</a>
+    <a href="#">Recomendaciones</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <main>
+    <h2>Sobre mí</h2>
+    <p>Mi nombre es Diana Sandoval. Esta página fue creada como parte de la tarea del curso de Inteligencia Artificial 2025-1.</p>
+    <p>Contacto: <a href="mailto:dsandoval44@uan.edu.co">dsandoval44@uan.edu.co</a></p>
+
+    <h2>¿Por qué adoptar estilos de vida saludables?</h2>
+    <p>Los buenos hábitos fortalecen tu cuerpo, tu mente y tu felicidad. Cada elección cuenta.</p>
+
+    <div>
+      <button class="info-btn" onclick="toggleInfo('ejercicio')">Ejercicio</button>
+      <p id="ejercicio" class="info-text">Realizar actividad física regular mejora el sistema cardiovascular, reduce el estrés y aumenta la energía.</p>
+
+      <button class="info-btn" onclick="toggleInfo('alimentacion')">Alimentación</button>
+      <p id="alimentacion" class="info-text">Una alimentación balanceada proporciona los nutrientes necesarios para mantenerte activo y saludable.</p>
+
+      <button class="info-btn" onclick="toggleInfo('descanso')">Descanso</button>
+      <p id="descanso" class="info-text">Dormir bien es fundamental para el bienestar mental y físico. Intenta dormir entre 7 y 8 horas cada noche.</p>
+    </div>
+
+    <img src="A_vibrant,_flat-style_digital_illustration_is_divi.png" alt="Estilos de vida saludables">
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Diana Sandoval - Página creada para el curso de IA 2025-1.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
